@@ -1,2 +1,2 @@
-# petpous.github.io
+# JaclynMoorhouse.github.io
 Website portfolio
