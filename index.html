@@ -20,7 +20,7 @@
 					<img src="images/avatar.jpg" alt="Profile picture" width="150" height="150" /></span>
 					<h1>Hi, I'm <strong>Jaclyn</strong> and I'm currently<br />
 					a student at Staffordshire university studying Games Development</a>.</h1>
-					<p>This is where I will create a portfolio of my projects<br /></p>
+					<p>These are the current projects I am most proud of and a brief overview of what skills I learnt whilst working on them<br /></p>
 				</div>
 			</section>
 
@@ -37,9 +37,18 @@
 								spin on this where a bird has to collect seeds while being chased by cats. Bananas give a speed boost and the
 								player can distract cats with a ball of wool for a few seconds. 
 							</p>
+							<p>This was made in Visual Studio and with SDL/S2D and wrritten in C++. The main focus was to code graphics and display
+								them on the screen and have them animated. This project also demonstrates using arrays to display multiple objects,
+								for example the seeds are displayed at random positions but are the same object loaded over and over and stored in an array.
+
+								This project also demonstrates collisions and sound effects at a basic level. 
+								All the graphics were drawn myself. 
+							</p>
 						</div>
 						<div class="col-6 col-12-medium imp-medium">
 							<span class="image fit"><img src="images/pacman.png" alt="" /></span>
+							<span class="image fit"><video width="320" height="240" controls>
+								<source src="images/BirdMaze.mp4" type="video/mp4">
 						</div>
 					</div>
 				</div>
@@ -51,28 +60,30 @@
 					<div class="row gtr-150">
 						<div class="col-6 col-12-medium">
 							<header class="major">
-								<h2>Marble Madness</h2>
-								<h3>C# Unity prototype from framework</h3>
+								<h2>Cheese Chase</h2>
+								<h3>C# Unity prototype platformer</h3>
 							</header>
-							<p>This project was based off a framework for a Marble Madness game which already had one basic level. The aim of the project
-								was to get to grips with unity and start experimenting with C# Unity scripts. From this, a second level was required and two 
-								new game mechanics.</p>
+							<p>This project was inspired by Cheese Land in Mario Kart and the sterotype of mice loving cheese. The idea was to have platforms made
+								out of different types of cheese which caused different effects. There are swiss cheese platforms which collapse under the player, bouncy
+								cheese jump pads and moudly cheese tiles which damage the player.
+							</p>
 
-							<p>I now understand how to add C# scripts to objects. I have some ideas for possible game mechanics. I added the standard peg object 
-									and by calling a method have it so 50 points are added to the score when collided with, however I also created my own method which
-									is the opposite and takes away points when collided with. The red peg makes the player lose score and has extra force so often 
-									pushes the player off the map. </p>
+							<p>What is notable about this, is this is the first time I felt like I had a proper understanding of Unity. 
+								I learnt how to import my own sprite sheets and how to split them into drawable tiles on different layers. 
+								I also learnt how to have animations run due to states. The thing I will use in a lot of other projects is the UI, 
+								I made which is interactive as the heart sprites change depending on the player health and the text which changes to display score.
+								This I can use for a health bar in any other game I make and would work for enemies as well.
+								I also learnt about how to use IEnemurators to have real time waited before executing a command. 
+								This is how the platform falls down, as well as removing the rigid body. </p>
 
-							<p>I programmed a door to activate only if the ball is the correct colour, I made 3 different colour change pads. One turns the ball red,
-									blue and green. There is 2 different coloured doors. My level has 3 different path ways to get to the final goal which show case the 
-									peg obstacle (green) which adds point and the other peg obstacle (red) which bounces the player with more force and takes away points. 
-									Then there is all three of the colour change pads and two different coloured doors to be activated. </p>
+							
  
 						</div>
 						<div class="col-6 col-12-medium imp-medium">
-							<span class="image fit"><img src="images/marble2.png" alt="" /></span>
+							<span class="image fit"><img src="images/CheeseChase.PNG" alt="" /></span>
 							<div class="col-6 col-12-medium imp-medium">
-						<span class="image fit"><img src="images/marble.png" alt="" /></span>
+						<span class="image fit"><video width="320" height="240" controls>
+							<source src="images/CheeseChase.mp4" type="video/mp4"></span>
 					</div>
 					</div>
 				</div>
@@ -88,14 +99,25 @@
 							<h3>Unity C# Side-Scrolling shooter prototype</h3>
 						</header>
 						<p>This is another prototype made from a framework in unity, however this framework was much more basic. It had the player being able to fire bullets on
-							click and enemies which destroy the player when touched. I am making a vertical side-scrolling shooter inspired by Strato Patrol EOS from Kirby's
-							Mass Attack. This is reflected in the style of graphics and the fact the player will be able to collect up to ten other of the main "shmoo" characters
+							click and enemies which destroy the player when touched. I am made a vertical side-scrolling shooter inspired by Strato Patrol EOS from Kirby's
+							Mass Attack. This is reflected in the style of graphics and the fact the player is able to collect up to ten other of the main "shmoo" characters
 							who all shoot together for increased damage. 
+						</p>
+						<p>I actually worked on this one before the Cheese Chase platformer but had several issues with it and missing features which I only learnt how to fix after
+							working on that project. For example the UI which has lives for the player and the boss I learnt to do during the platformer. I used this concept of UI
+							that changes based on variables and created one which shows how many Shmoos the player has in fighting with them. I used used my knowledge of panels and 
+							canvases to create a game over screen with my first button. 
+
+							It was also vital to understand how to have scripts communicate with variables on other scripts or without this projects in unity are very limited.
 						</p>
 					</div>
 					<div class="col-6 col-12-medium imp-medium">
 						<span class="image fit"><img src="images/sidescroller.png" alt="" /></span>
 					</div>
+					<div class="image fit"><video width="320" height="240" controls>
+						<source src="images/sidescroller1.mp4" type="video/mp4"></div>
+					<div class="image fit"><video width="320" height="240" controls>
+							<source src="images/sidescroller2.mp4" type="video/mp4"></div>	
 				</div>
 			</div>
 		</section>
@@ -428,8 +450,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					<li><a href="https://instagram.com/autumnequinoxgame" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
 				</ul>
 			<header class="major">
-				<h2>These are placeholder projects</h2>
-				<h3>This site is ready for new sections and future projects</h3>
+				<h2>Thank you for checking out my projects</h2>
+				<h3>I am always working on new projects which will be showcased here</h3>
 			</header>		
 			</section>
 
