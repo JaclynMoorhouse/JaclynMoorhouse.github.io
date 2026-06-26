@@ -1,363 +1,594 @@
-<!DOCTYPE HTML>
-<!--
-	Photon by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<title>Photon by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>Jaclyn Moorhouse — Technical CV</title>
+				<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-		<!-- Two -->
-		<section id="two" class="main style2">
-			<div class="container">
-				<div class="row gtr-150">
-					<div class="col-6 col-12-medium">
-						<header class="major">
-							<h2>My CV</h2>
-						</header>
-						
-						<img src="images/.png" alt="">
+						<style>
+							/* -------------------------------------------------------------
+							CUTE GAME-UI CV THEME SYSTEM
+							------------------------------------------------------------- */
+							:root {
+							--bg-canvas: #f5f7fa;
+							--panel-pink: #ffb7c5;
+							--brand-blue: #8bc6ec;
+							--brand-purple: #623697;
+							--dark-neutral: #1a1a1a;
+							--window-dark: #121214;
+							}
 
+							* {
+							box-sizing: border-box;
+							margin: 0;
+							padding: 0;
+							}
+
+							body {
+							font-family: "Source Sans Pro", Helvetica, sans-serif;
+							background-color: var(--bg-canvas);
+							color: var(--dark-neutral);
+							line-height: 1.6;
+							padding: 3rem 1rem;
+							}
+
+							/* Clean Back Button to Portfolio */
+							.back-nav {
+							max-width: 950px;
+							margin: 0 auto 1.5rem auto;
+							}
+							.back-btn {
+							display: inline-flex;
+							align-items: center;
+							gap: 0.5rem;
+							color: var(--brand-purple);
+							text-decoration: none;
+							font-weight: 700;
+							font-size: 1rem;
+							transition: transform 0.2s ease;
+							}
+							.back-btn:hover {
+							transform: translateX(-4px);
+							}
+
+							/* Main Character Sheet Dashboard Container */
+							.cv-dashboard {
+							max-width: 950px;
+							margin: 0 auto;
+							background: #ffffff;
+							border: 6px solid var(--brand-purple);
+							border-radius: 20px;
+							box-shadow: 0 12px 32px rgba(98, 54, 151, 0.12);
+							overflow: hidden;
+							}
+
+							/* --- PROFILE HEADER CARD (PINK QUEST THEME) --- */
+							.cv-header-panel {
+							background-color: var(--panel-pink);
+							border-bottom: 6px solid var(--brand-purple);
+							padding: 3rem;
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							gap: 2rem;
+							}
+
+							.identity-cluster h1 {
+							font-size: 2.8rem;
+							font-weight: 900;
+							color: var(--brand-purple);
+							line-height: 1.1;
+							margin-bottom: 0.3rem;
+							}
+							.identity-cluster .subtitle {
+							font-size: 1.3rem;
+							font-weight: 700;
+							color: var(--dark-neutral);
+							text-transform: uppercase;
+							letter-spacing: 0.04em;
+							margin-bottom: 1rem;
+							}
+
+							/* Contact Details Layout */
+							.comms-log {
+							display: flex;
+							flex-wrap: wrap;
+							gap: 1.2rem;
+							list-style: none;
+							}
+							.comms-log li a, .comms-log li {
+							font-size: 0.95rem;
+							font-weight: 700;
+							color: var(--dark-neutral);
+							text-decoration: none;
+							display: flex;
+							align-items: center;
+							gap: 0.5rem;
+							}
+							.comms-log li i {
+							color: var(--brand-purple);
+							}
+
+							/* Game Avatar Frame */
+							.cv-avatar-frame {
+							background: var(--window-dark);
+							border: 4px solid var(--brand-purple);
+							border-radius: 12px;
+							padding: 5px;
+							width: 130px;
+							height: 130px;
+							flex-shrink: 0;
+							box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+							}
+							.cv-avatar-frame img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+							border-radius: 6px;
+							}
+
+							/* --- DASHBOARD SPLIT BODY --- */
+							.cv-grid {
+							display: grid;
+							grid-template-columns: 320px 1fr;
+							}
+
+							/* --- LEFT SIDE PANEL (STATS & ATTRIBUTES) --- */
+							.cv-stats-rail {
+							background-color: #fafafa;
+							border-right: 4px dashed rgba(98, 54, 151, 0.15);
+							padding: 2.5rem 2rem;
+							}
+
+							/* --- RIGHT SIDE PANEL (QUEST LOGS) --- */
+							.cv-main-pane {
+							padding: 2.5rem 3rem;
+							}
+
+							/* UI Block Section Titles */
+							.ui-section-title {
+							font-size: 1.2rem;
+							font-weight: 900;
+							color: var(--brand-purple);
+							text-transform: uppercase;
+							letter-spacing: 0.08em;
+							margin-bottom: 1.2rem;
+							display: flex;
+							align-items: center;
+							gap: 0.6rem;
+							}
+							.ui-section-title::after {
+							content: '';
+							flex: 1;
+							height: 3px;
+							background: var(--panel-pink);
+							border-radius: 2px;
+							}
+
+							.cv-main-pane .ui-section-title {
+							margin-top: 2rem;
+							}
+							.cv-main-pane .ui-section-title:first-of-type {
+							margin-top: 0;
+							}
+
+							/* Bio/Profile text container */
+							.profile-summary {
+							font-size: 1rem;
+							color: var(--dark-neutral);
+							margin-bottom: 2rem;
+							}
+
+							/* --- KEY SKILLS LIST (SKILL NODES) --- */
+							.skills-container {
+							display: flex;
+							flex-direction: column;
+							gap: 0.6rem;
+							margin-bottom: 2.5rem;
+							}
+							.skill-node {
+							background: #ffffff;
+							border: 2px solid var(--brand-purple);
+							border-radius: 8px;
+							padding: 0.6rem 0.9rem;
+							font-size: 0.9rem;
+							font-weight: 700;
+							display: flex;
+							align-items: center;
+							gap: 0.5rem;
+							box-shadow: 2px 2px 0px var(--brand-purple);
+							}
+							.skill-node i {
+							color: var(--brand-purple);
+							font-size: 0.8rem;
+							}
+
+							/* --- ACHIEVEMENTS CONTAINER --- */
+							.achievements-list {
+							list-style: none;
+							display: flex;
+							flex-direction: column;
+							gap: 0.8rem;
+							}
+							.achievement-card {
+							background: rgba(139, 198, 236, 0.15);
+							border-left: 4px solid var(--brand-blue);
+							padding: 0.6rem 0.8rem;
+							border-radius: 0 6px 6px 0;
+							}
+							.achievement-card strong {
+							display: block;
+							font-size: 0.95rem;
+							color: var(--dark-neutral);
+							}
+							.achievement-card span {
+							font-size: 0.85rem;
+							opacity: 0.85;
+							}
+
+							/* --- CHRONICLE ENTRIES (PROJECTS & EXPERIENCE) --- */
+							.chronicle-timeline {
+							display: flex;
+							flex-direction: column;
+							gap: 1.8rem;
+							}
+							.chronicle-card {
+							position: relative;
+							}
+							.chronicle-header {
+							display: flex;
+							justify-content: space-between;
+							align-items: flex-start;
+							margin-bottom: 0.4rem;
+							}
+							.chronicle-title h3 {
+							font-size: 1.25rem;
+							font-weight: 800;
+							color: var(--brand-purple);
+							}
+							.chronicle-title .company {
+							font-size: 0.95rem;
+							font-weight: 700;
+							color: var(--brand-blue);
+							}
+							.chronicle-badge {
+							background: var(--brand-purple);
+							color: #ffffff;
+							font-size: 0.75rem;
+							font-weight: 700;
+							padding: 0.2rem 0.6rem;
+							border-radius: 20px;
+							letter-spacing: 0.02em;
+							}
+
+							.chronicle-card p {
+							font-size: 0.95rem;
+							margin-bottom: 0.5rem;
+							}
+
+							/* --- CUSTOM SEAL BULLET SCRIPT --- */
+							.seal-bullets li {
+							font-size: 0.9rem;
+							position: relative;
+							padding-left: 1.8rem; /* Nudged slightly to give the seal breathing room */
+							margin-bottom: 0.4rem;
+							line-height: 1.4;
+							}
+							.seal-bullets li::before {
+							content: "🦭"; /* Swapped paw print for a comfy seal! */
+							position: absolute;
+							left: 0;
+							top: 1px;
+							font-size: 1.05rem;
+							}
+
+							.education-list {
+							list-style: none;
+							padding-left: 0;
+							}
+							.education-list li {
+							margin-bottom: 0.8rem;
+							font-size: 0.95rem;
+							}
+							.education-list li strong {
+							color: var(--brand-purple);
+							}
+							.education-sub-list {
+							list-style: none;
+							padding-left: 1.2rem;
+							margin-top: 0.2rem;
+							}
+							.education-sub-list li {
+							font-size: 0.9rem;
+							margin-bottom: 0.2rem;
+							position: relative;
+							}
+							.education-sub-list li::before {
+							content: "•";
+							color: var(--brand-blue);
+							font-weight: bold;
+							position: absolute;
+							left: -10px;
+							}
+
+							/* --- RESPONSIVE MOBILE SHEET PASS --- */
+							@media screen and (max-width: 850px) {
+							body { padding: 1rem 0.5rem; }
+							.cv-header-panel {
+							flex-direction: column-reverse;
+							text-align: center;
+							padding: 2rem;
+							}
+							.comms-log { justify-content: center; }
+							.cv-grid { grid-template-columns: 1fr; }
+							.cv-stats-rail { border-right: none; border-bottom: 4px dashed rgba(98, 54, 151, 0.15); }
+							.cv-main-pane { padding: 2rem; }
+							.chronicle-header { flex-direction: column; gap: 0.3rem; }
+							}
+						</style>
+					</head>
+	<body>
+
+		<!-- Back Navigation Link -->
+		<div class="back-nav">
+			<a href="index.html" class="back-btn">
+				<i class="fa-solid fa-arrow-left"></i> Return to Production Hub
+			</a>
+		</div>
+
+		<!-- Main Character Sheet Document Canvas -->
+		<main class="cv-dashboard">
+			<!-- Data structured from file "Jaclyn Moorhouse CV.docx" -->
+
+			<!-- TOP LOG: MAIN PLAYER IDENTITY -->
+			<header class="cv-header-panel">
+				<div class="identity-cluster">
+					<h1>Jaclyn Moorhouse</h1>
+					<div class="subtitle">Published award-winning mobile game developer</div>
+
+					<ul class="comms-log">
+						<li>
+							<i class="fa-solid fa-location-dot"></i> Stoke-On-Trent, UK
+						</li>
+						<li>
+							<i class="fa-solid fa-envelope"></i>
+							<a href="mailto:jaclynmoorhouse@gmail.com">jaclynmoorhouse@gmail.com</a>
+						</li>
+						<li>
+							<i class="fa-solid fa-globe"></i>
+							<a href="https://jaclynmoorhouse.github.io" target="_blank">jaclynmoorhouse.github.io</a>
+						</li>
+						<li>
+							<i class="fa-solid fa-phone"></i> 07484160081
+						</li>
+					</ul>
+				</div>
+
+				<div class="cv-avatar-frame">
+					<img src="images/me.png" alt="Jaclyn Moorhouse Portrait">
+            </div>
+			</header>
+
+			<!-- MAIN LAYOUT MATRIX -->
+			<div class="cv-grid">
+
+				<!-- LEFT ATTRIBUTE SIDEBAR (Key Skills & Achievements Lists) -->
+				<aside class="cv-stats-rail">
+
+					<h2 class="ui-section-title">
+						<i class="fa-solid fa-wand-magic-sparkles"></i> Key Skills
+					</h2>
+					<div class="skills-container">
+						<div class="skill-node">
+							<span style="font-size: 0.9rem; margin-right: 0.5rem;">🦭</span></i> Unity (C#), Gameplay Programming
+						</div>
+						<div class="skill-node">
+							<span style="font-size: 0.9rem; margin-right: 0.5rem;">🦭</span></i> Game Design, Systems Design, UX Design
+						</div>
+						<div class="skill-node">
+							<span style="font-size: 0.9rem; margin-right: 0.5rem;">🦭</span></i> AI Behaviour & Simulation
+						</div>
+						<div class="skill-node">
+							<span style="font-size: 0.9rem; margin-right: 0.5rem;">🦭</span></i> Production, Project Leadership, Agile
+						</div>
+						<div class="skill-node">
+							<span style="font-size: 0.9rem; margin-right: 0.5rem;">🦭</span></i> Community Management & Social Media Growth
+						</div>
+						<div class="skill-node">
+							<span style="font-size: 0.9rem; margin-right: 0.5rem;">🦭</span></i> 2D Asset creation and Integration, Animation Pipelines
+						</div>
+						<div class="skill-node">
+							<span style="font-size: 0.9rem; margin-right: 0.5rem;">🦭</span></i> Narrative & Worldbuilding
+						</div>
+						<div class="skill-node">
+							<span style="font-size: 0.9rem; margin-right: 0.5rem;">🦭</span></i> Live Ops, Monetisation, Analytics
+						</div>
+						<div class="skill-node">
+							<span style="font-size: 0.9rem; margin-right: 0.5rem;">🦭</span></i> Second language French
+						</div>
 					</div>
-				</div>
-				</div>
-				<ul class="actions">
-					<li><a href="index.html" class="button primary">Back to main page</a></li>
-				</ul>
+
+					<h2 class="ui-section-title">
+						<i class="fa-solid fa-trophy"></i> Achievements
+					</h2>
+					<div class="achievements-list">
+						<div class="achievement-card">
+							<strong>35,000+ downloads on published mobile game.</strong>
+						</div>
+						<div class="achievement-card">
+							<strong>3rd Place: Grad EX 2026 University of Staffordshire Master’s Game Design (Virtual seal Pet)</strong>
+						</div>
+						<div class="achievement-card">
+							<strong>TIGA Nominee: Outstanding Graduate of the Year: Production & Enterprise.</strong>
+						</div>
+						<div class="achievement-card">
+							<strong>Built a large, active social media following around original game IP.</strong>
+						</div>
+						<div class="achievement-card">
+							<strong>Consistent ad revenue earnings from live mobile game</strong>
+						</div>
+					</div>
+				</aside>
+
+				<!-- RIGHT SYSTEM PANE (Profile, Projects, Experience, Education) -->
+				<section class="cv-main-pane">
+
+					<h2 class="ui-section-title">
+						<i class="fa-solid fa-user"></i> Profile
+					</h2>
+					<p class="profile-summary">
+						Published mobile game developer experienced in independent game production, community building, and live product management. Creator of the Virtual Seal Pet mobile game, achieving 35,000+ downloads, a highly engaged social media community, and consistent ad revenue earnings. Experienced in leading multidisciplinary teams and delivering polished, game experiences. Currently developing a detailed Seal Sanctuary simulation game with advanced AI behaviour, personality systems, and social mechanics.
+					</p>
+
+					<h2 class="ui-section-title">
+						<i class="fa-solid fa-gamepad"></i> Game Productions
+					</h2>
+					<div class="chronicle-timeline">
+
+						<div class="chronicle-card">
+							<div class="chronicle-header">
+								<div class="chronicle-title">
+									<h3>Virtual Seal Pet</h3>
+									<span class="company">Solo Developer</span>
+								</div>
+								<span class="chronicle-badge">Mobile Game, 35k+ Downloads, Monetised</span>
+							</div>
+							<ul class="seal-bullets">
+								<li>Designed, programmed, and released a full mobile virtual pet game.</li>
+								<li>Built a thriving online community where players are deeply attached to their pet seals.</li>
+								<li>Implemented daily care systems, animations, UI, progression and fun mini games.</li>
+								<li>Achieved industry recognition, including: 3rd Prize at the Graduate Exhibition (judged by industry professionals).</li>
+							</ul>
+						</div>
+
+						<div class="chronicle-card">
+							<div class="chronicle-header">
+								<div class="chronicle-title">
+									<h3>Seal Sanctuary Simulation Game</h3>
+									<span class="company">Solo Developer</span>
+								</div>
+								<span class="chronicle-badge">In Development Release August 2026</span>
+							</div>
+							<ul class="seal-bullets">
+								<li>Designed a deep simulation featuring AI driven seal personalities, friendship/rivalry systems, socialising mechanics, and sanctuary management.</li>
+								<li>Building scalable code architecture for behaviour trees, offline simulation, and narrative generation.</li>
+								<li>Achieved TIGA Award Nomination - Outstanding TIGA Graduate of the Year: Production & Enterprise.</li>
+							</ul>
+						</div>
+
+						<div class="chronicle-card">
+							<div class="chronicle-header">
+								<div class="chronicle-title">
+									<h3>University Group Projects</h3>
+									<span class="company">Project Lead</span>
+								</div>
+								<span class="chronicle-badge">Group Production</span>
+							</div>
+							<p>Led two major group projects. One has programming lead and the other as project lead. Faced extreme challenges during production but managed smoothly to deliver a high-quality impressive 3D virtual pet game.</p>
+							<ul class="seal-bullets">
+								<li>Managed task distribution, communication, and delivery while maintaining high team morale.</li>
+							</ul>
+						</div>
+					</div>
+
+					<h2 class="ui-section-title">
+						<i class="fa-solid fa-briefcase"></i> Professional Experience
+					</h2>
+					<div class="chronicle-timeline">
+
+						<div class="chronicle-card">
+							<div class="chronicle-header">
+								<div class="chronicle-title">
+									<h3>Harris Furever Homes</h3>
+									<span class="company">Owner & Operator</span>
+								</div>
+								<span class="chronicle-badge">2017–Present</span>
+							</div>
+							<ul class="seal-bullets">
+								<li>Independent plushie adoption, rescue, and resell business with themed adoption certificates.</li>
+								<li>Highly profitable through online Etsy sales and market events.</li>
+								<li>Developed a loved brand, star seller customer experience and beautiful product presentation</li>
+							</ul>
+						</div>
+
+						<div class="chronicle-card">
+							<div class="chronicle-header">
+								<div class="chronicle-title">
+									<h3>MK Food Fest</h3>
+									<span class="company">Children’s Activity Organiser</span>
+								</div>
+								<span class="chronicle-badge">2017–2019</span>
+							</div>
+							<ul class="seal-bullets">
+								<li>Designed and ran children’s craft activities including paper plate art, play kitchen roleplay, and treasure hunts.</li>
+								<li>Managed event flow, safety, and engagement for large groups of young children as well as volunteering to set up and clean the event.</li>
+							</ul>
+						</div>
+
+						<div class="chronicle-card">
+							<div class="chronicle-header">
+								<div class="chronicle-title">
+									<h3>Market Stall Vendor</h3>
+									<span class="company">Various Events</span>
+								</div>
+								<span class="chronicle-badge">2016–2022</span>
+							</div>
+							<ul class="seal-bullets">
+								<li>Ran stalls selling jam and chutney (for family business) and plushie adoptions.</li>
+								<li>Organised raffles, customer interaction, and product displays.</li>
+							</ul>
+						</div>
+
+						<div class="chronicle-card">
+							<div class="chronicle-header">
+								<div class="chronicle-title">
+									<h3>Student Demonstrator</h3>
+									<span class="company">University of Staffordshire (Animation & VFX Department)</span>
+								</div>
+								<span class="chronicle-badge">Academic Term</span>
+							</div>
+							<ul class="seal-bullets">
+								<li>Supported students with animation, VFX, and technical workflows.</li>
+								<li>Assisted lecturers during practical sessions and provided one to one guidance.</li>
+							</ul>
+						</div>
+					</div>
+
+					<h2 class="ui-section-title">
+						<i class="fa-solid fa-graduation-cap"></i> Education
+					</h2>
+					<ul class="education-list">
+						<li>
+							<strong>MSc Game Design (Expected 2026)</strong>
+							<br>
+                        University of Staffordshire
+                    
+						</li>
+						<li>
+							<strong>BSc (Hons) Game Development (First Class)</strong>
+							<br>
+                        University of Staffordshire
+                    
+						</li>
+						<li>
+							<strong>A Levels (ABC)</strong>
+							<br>
+                        History, English Literature and French
+                    
+						</li>
+						<li>
+							<strong>Extended Project Qualification (A*)</strong> (RPG Game Project – Summer Solstice)
+						</li>
+						<li>
+							<strong>GCSEs</strong> All Grade 7 or Higher
+						</li>
+					</ul>
+
+				</section>
 			</div>
-		</section>
-		
-		<!--
-			<section id="five" class="main style1">
-				<div class="container">
-					<header class="major special">
-						<h2>Elements</h2>
-					</header>
-
-					<section>
-						<h4>Text</h4>
-						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-						<hr />
-						<header>
-							<h4>Heading with a Subtitle</h4>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<header>
-							<h5>Heading with a Subtitle</h5>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<hr />
-						<h2>Heading Level 2</h2>
-						<h3>Heading Level 3</h3>
-						<h4>Heading Level 4</h4>
-						<h5>Heading Level 5</h5>
-						<h6>Heading Level 6</h6>
-						<hr />
-						<h5>Blockquote</h5>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-						<h5>Preformatted</h5>
-						<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-					</section>
-
-					<section>
-						<h4>Lists</h4>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<h5>Unordered</h5>
-								<ul>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-								<h5>Alternate</h5>
-								<ul class="alt">
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<h5>Ordered</h5>
-								<ol>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis viverra.</li>
-									<li>Felis enim feugiat.</li>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis lorem.</li>
-									<li>Felis enim et feugiat.</li>
-								</ol>
-								<h5>Icons</h5>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<h5>Actions</h5>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<ul class="actions">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions small">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary fit">Default</a></li>
-									<li><a href="#" class="button fit">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small fit">Small</a></li>
-									<li><a href="#" class="button small fit">Small</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
-
-					<section>
-						<h4>Table</h4>
-						<h5>Default</h5>
-						<div class="table-wrapper">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-
-						<h5>Alternate</h5>
-						<div class="table-wrapper">
-							<table class="alt">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</section>
-
-					<section>
-						<h4>Buttons</h4>
-						<ul class="actions">
-							<li><a href="#" class="button primary">Primary</a></li>
-							<li><a href="#" class="button">Default</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button large">Large</a></li>
-							<li><a href="#" class="button">Default</a></li>
-							<li><a href="#" class="button small">Small</a></li>
-						</ul>
-						<ul class="actions fit">
-							<li><a href="#" class="button fit">Fit</a></li>
-							<li><a href="#" class="button primary fit">Fit</a></li>
-							<li><a href="#" class="button fit">Fit</a></li>
-						</ul>
-						<ul class="actions fit small">
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-							<li><a href="#" class="button fit small">Fit + Small</a></li>
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-						</ul>
-						<ul class="actions">
-							<li><span class="button primary disabled">Disabled</span></li>
-							<li><span class="button disabled">Disabled</span></li>
-						</ul>
-					</section>
-
-					<section>
-						<h4>Form</h4>
-						<form method="post" action="#">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-6 col-12-xsmall">
-									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-								</div>
-								<div class="col-12">
-									<select name="demo-category" id="demo-category">
-										<option value="">- Category -</option>
-										<option value="1">Manufacturing</option>
-										<option value="1">Shipping</option>
-										<option value="1">Administration</option>
-										<option value="1">Human Resources</option>
-									</select>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">Low</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-normal" name="demo-priority">
-									<label for="demo-priority-normal">Normal</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-high" name="demo-priority">
-									<label for="demo-priority-high">High</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
-									<label for="demo-human">Not a robot</label>
-								</div>
-								<div class="col-12">
-									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</section>
-
-					<section>
-						<h4>Image</h4>
-						<h5>Fit</h5>
-						<div class="box alt">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-12"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-							</div>
-						</div>
-						<h5>Left &amp; Right</h5>
-						<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-					</section>
-
-				</div>
-			</section>
-		-->
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		</main>
 
 	</body>
 </html>

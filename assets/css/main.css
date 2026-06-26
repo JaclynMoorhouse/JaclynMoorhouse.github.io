@@ -3506,3 +3506,485 @@ input, select, textarea {
 			}
 
 	}
+/* -------------------------------------------------------------
+   ADVANCED GAME PRODUCTION PROFILE LOGS (REFINED UI)
+   ------------------------------------------------------------- */
+
+:root {
+    --brand-blue: #8bc6ec;    
+    --brand-purple: #623697;  
+    --dark-neutral: #1a1a1a;  
+}
+
+/* --- THEME FONT REFINEMENTS --- */
+body, input, select, textarea, .button {
+    font-family: "Source Sans Pro", Helvetica, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Source Sans Pro", Helvetica, sans-serif !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.03em !important;
+    text-transform: none !important;
+}
+
+/* --- OVERRIDES TO FORCE IMMERSIVE HEADER/FOOTER --- */
+#header, #header.header, #header .container {
+    background-color: var(--brand-blue) !important;
+    background-image: none !important;
+    color: #ffffff !important;
+}
+#header.header {
+    border-bottom: 8px solid var(--brand-purple);
+    padding: 6em 0 !important;
+}
+#header.header h1, #header.header h1 strong, #header.header p {
+    color: #ffffff !important;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+#header.header h1 strong {
+    border-bottom: 3px solid #ffffff;
+    padding-bottom: 4px;
+}
+
+#footer {
+    background-color: var(--brand-blue) !important;
+    background-image: none !important;
+    border-top: 8px solid var(--brand-purple);
+    padding: 5em 0 !important;
+}
+#footer h2 { color: #ffffff !important; }
+#footer ul.icons li { background-image: none !important; padding-left: 0 !important; }
+
+/* --- THE INTERACTIVE UI BUTTON --- */
+.button, input[type="submit"], input[type="button"] {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    background: url("../../images/ui_button.png") no-repeat center center !important;
+    background-size: 100% 100% !important;
+    width: 240px !important; 
+    height: 68px !important;
+    color: #ffffff !important;
+    font-size: 0.95em !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    text-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 0 4px 0 !important;
+    cursor: pointer;
+    transition: transform 0.1s ease, filter 0.2s ease;
+}
+.button:hover { filter: brightness(1.15) drop-shadow(0px 4px 8px rgba(0,0,0,0.2)); }
+.button:active { transform: scale(0.96); }
+
+/* --- LARGE HORIZONTAL RECORD DISPLAY (ui_rectangle) --- */
+.ui-rectangle-frame {
+    background: url("../../images/ui_rectangle.png") no-repeat center center !important;
+    background-size: 100% 100% !important;
+    padding: 4em !important;
+    margin: 1.5em 0;
+    color: var(--dark-neutral);
+}
+.ui-rectangle-frame h3 {
+    color: var(--brand-purple) !important;
+    font-size: 2em !important;
+    margin-bottom: 0.4em !important;
+    border-bottom: 2px dashed rgba(98, 54, 151, 0.2);
+    padding-bottom: 0.2em;
+}
+
+/* --- GRID ITEM CARD CONTAINER (ui_square) --- */
+.ui-square-card {
+    background: url("../../images/ui_square.png") no-repeat center center !important;
+    background-size: 100% 100% !important;
+    padding: 2.8em 2.4em !important;
+    margin-bottom: 2.5em;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* --- INTERNAL SCREENSHOT / UI DISPLAY SLOTS --- */
+.ui-screenshot-slot {
+    background: #121214; /* Dark screen background simulating an active window */
+    border: 4px solid var(--brand-purple);
+    border-radius: 8px;
+    padding: 6px;
+    margin-bottom: 1.2em;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.8);
+    overflow: hidden;
+    display: block;
+}
+.ui-screenshot-slot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+.ui-square-card:hover .ui-screenshot-slot img {
+    transform: scale(1.03); /* Soft responsive feedback on hover */
+}
+
+.ui-square-card h4 {
+    font-size: 1.2em !important;
+    color: var(--brand-purple) !important;
+    margin-bottom: 0.5em !important;
+}
+.ui-square-card p {
+    color: var(--dark-neutral) !important;
+    font-size: 0.9em !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0 !important;
+}
+
+/* --- CANVAS & SEALS BACKGROUND SETUP --- */
+body {
+    color: var(--dark-neutral);
+    background-color: #f5f7fa; /* Soft contrast background highlights the cards */
+}
+ul.seal-bullets li {
+    list-style: none !important;
+    padding-left: 35px !important;
+    background: url("../../images/seal_icon_small.png") no-repeat 0 4px !important;
+    background-size: 20px !important;
+    margin-bottom: 0.7em !important;
+    color: var(--dark-neutral) !important;
+}
+section.featured::after, section#projects::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: url("../../images/seal_icon_large.png") no-repeat center !important;
+    background-size: contain !important;
+    margin: 4em auto 0 auto;
+    opacity: 0.4;
+}
+
+/* --- FEATURED SECTION STORE BUTTONS ALIGNMENT --- */
+.featured-buttons {
+    margin-top: 1.5em !important;
+}
+
+/* Slightly adjusts button width for side-by-side split columns inside the dashboard frame */
+.button.store-btn {
+    width: 100% !important;
+    max-width: 220px !important;
+    font-size: 0.9em !important;
+}
+
+/* --- TEMPLATE GRID BREAKOUT FIXES --- */
+.ui-inner-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important; /* Hard-stops assets from sliding outside the frame */
+}
+
+.ui-inner-row .row {
+    width: 100% !important;
+    margin: 0 !important; /* Overrides the template's negative margin pulling effect */
+}
+
+.ui-inner-row .row > [class*="col-"] {
+    padding-top: 0 !important; /* Cleans up grid vertical nesting alignment */
+}
+
+/* -------------------------------------------------------------
+   TOTAL GRID RESET & FLEXBOX ENFORCEMENT
+   ------------------------------------------------------------- */
+
+/* Force the panel to contain everything cleanly */
+.ui-landscape-panel {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* The custom flex container that bypasses template rules */
+.ui-flex-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 3em !important; /* Perfect spacing between image and text */
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Allocate 45% of the width to the beautifully framed image */
+.ui-left-side {
+    flex: 0 0 45% !important;
+    max-width: 45% !important;
+    box-sizing: border-box !important;
+}
+
+/* Force the screenshot image to strictly stay inside its frame bounds */
+.ui-display-slot img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important; /* Maintains crisp 1600x700 aspect ratio */
+    max-width: 100% !important;
+}
+
+/* Allocate 50% of the width to the text and buttons */
+.ui-right-side {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    box-sizing: border-box !important;
+}
+
+/* Keep store buttons wrapped tightly side-by-side */
+.ui-button-row {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 1em !important;
+    margin-top: 1.5em !important;
+}
+
+.ui-button-row .button.store-btn {
+    width: 200px !important;
+    max-width: 100% !important;
+}
+
+/* --- RESPONSIVE MOBILE PASS --- */
+/* If the screen gets small, drop them into a perfect vertical stack */
+@media screen and (max-width: 980px) {
+    .ui-flex-container {
+        flex-direction: column !important;
+        gap: 2em !important;
+    }
+    .ui-left-side, .ui-right-side {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    .ui-button-row {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}
+/* -------------------------------------------------------------
+   FEATURED PANEL: IMAGES, FRAMES, AND PINK THEME ENFORCEMENT
+   ------------------------------------------------------------- */
+
+/* The dedicated container that brings back your vibrant pink background styling */
+.ui-featured-pink-panel {
+    background: #ffb7c5 !important; /* Forces your beautiful pink background color */
+    border: 6px solid var(--brand-purple); /* Adds a sharp, clean game-UI border */
+    border-radius: 12px;
+    padding: 3.5em 4em !important;
+    margin-bottom: 3em !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Ensure text elements display in a high-contrast dark color inside the pink area */
+.ui-featured-pink-panel h3 {
+    color: var(--brand-purple) !important;
+    font-size: 2em !important;
+    margin-bottom: 0.4em !important;
+}
+
+.ui-featured-pink-panel p,
+.ui-featured-pink-panel ul.seal-bullets li {
+    color: #1a1a1a !important;
+}
+
+/* --- THE FLEXBOX AND IMAGE FRAMING LAYER --- */
+.ui-flex-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 3em !important;
+    width: 100% !important;
+}
+
+.ui-left-side {
+    flex: 0 0 45% !important;
+    max-width: 45% !important;
+}
+
+/* The dark layout box that perfectly frames your screenshot like the cards below */
+.ui-display-slot {
+    background: #121214 !important; 
+    border: 4px solid var(--brand-purple) !important;
+    border-radius: 8px !important;
+    padding: 6px !important;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.8) !important;
+}
+
+.ui-display-slot img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.ui-right-side {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+}
+
+.ui-button-row {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 1.5em !important;
+    margin-top: 2em !important;
+}
+
+.ui-button-row .button.store-btn {
+    width: 200px !important;
+}
+
+/* Responsive drop for smaller viewports */
+@media screen and (max-width: 980px) {
+    .ui-flex-container {
+        flex-direction: column !important;
+        gap: 2em !important;
+    }
+    .ui-left-side, .ui-right-side {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    .ui-button-row {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}
+
+/* -------------------------------------------------------------
+   SYSTEM PORTRAIT & PROFILE CREDENTIALS LOGS
+   ------------------------------------------------------------- */
+
+/* Flex layout configuration */
+.ui-header-flex {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 4em !important;
+    width: 100% !important;
+    text-align: left !important;
+}
+
+.ui-header-specs {
+    flex: 0 0 60% !important;
+    max-width: 60% !important;
+}
+
+.ui-header-avatar-zone {
+    flex: 0 0 35% !important;
+    max-width: 35% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* --- THE AVATAR GAME UI FRAME --- */
+.ui-avatar-frame {
+    background: #121214 !important; /* Crisp dark backing matching game UI windows */
+    border: 6px solid var(--brand-purple) !important;
+    border-radius: 16px !important;
+    padding: 8px !important;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3), inset 0px 0px 15px rgba(0,0,0,0.6) !important;
+    width: 100% !important;
+    max-width: 320px !important; /* Perfect square/portrait constraint boundary */
+    box-sizing: border-box !important;
+    transition: transform 0.3s ease;
+}
+
+.ui-avatar-frame:hover {
+    transform: scale(1.02) rotate(1deg);
+}
+
+.ui-avatar-frame img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+}
+
+/* --- TEXT LAYOUT & ACHIEVEMENT STAT NODES --- */
+.ui-profile-bio p {
+    font-size: 1.25em !important;
+    line-height: 1.6 !important;
+    color: #ffffff !important;
+    margin-bottom: 1.8em !important;
+    font-weight: 400 !important;
+    opacity: 0.95;
+}
+
+/* Achievement logs configuration */
+.ui-header-stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.2em !important;
+    width: 100% !important;
+}
+
+.ui-stat-node {
+    background: rgba(26, 26, 26, 0.25) !important;
+    border-left: 4px solid var(--brand-purple) !important;
+    padding: 0.8em 1.2em !important;
+    border-radius: 0 8px 8px 0;
+    box-sizing: border-box;
+}
+
+.ui-stat-label {
+    display: block !important;
+    font-size: 0.75em !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.1em !important;
+    color: var(--brand-purple) !important;
+    text-transform: uppercase !important;
+    margin-bottom: 0.2em !important;
+}
+
+.ui-stat-value {
+    display: block !important;
+    font-size: 1.15em !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+}
+
+.ui-stat-sub {
+    display: block !important;
+    font-size: 0.85em !important;
+    color: #ffffff !important;
+    opacity: 0.8;
+    margin-top: 0.1em !important;
+}
+
+/* --- HEADER MOBILE BREAKPASS --- */
+@media screen and (max-width: 980px) {
+    .ui-header-flex {
+        flex-direction: column-reverse !important; /* Moves avatar smoothly above text on mobile layout screens */
+        gap: 2.5em !important;
+        text-align: center !important;
+    }
+    .ui-header-specs, .ui-header-avatar-zone {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    .ui-header-stats-grid {
+        grid-template-columns: 1fr !important; /* Stacks data fields cleanly on smaller portrait windows */
+    }
+    .ui-stat-node {
+        border-left: none !important;
+        border-top: 4px solid var(--brand-purple) !important;
+        border-radius: 0 0 8px 8px;
+    }
+}
+/* --- COMPACT SYSTEM NAV LINK --- */
+.button.cv-link-btn {
+    margin-top: 1.5em !important;
+    width: 240px !important;
+    max-width: 100% !important;
+}
