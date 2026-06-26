@@ -3961,3 +3961,46 @@ section.featured::after, section#projects::after {
     opacity: 0.8;
     margin-top: 0.1em !important;
 }
+/* ==========================================================================
+   HEADER MOBILE RESPONSIVENESS FIX
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    /* Force the left side and right side avatar to stack vertically */
+    .ui-header-flex {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* Move the avatar image to the top of the profile for better mobile flow */
+    .ui-header-avatar-zone {
+        order: -1 !important; /* Forces image above the text on mobile */
+        margin-bottom: 2rem !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .ui-avatar-frame, .ui-avatar-frame img {
+        max-width: 200px !important; /* Keeps the profile portrait perfectly sized on phones */
+        height: auto !important;
+        margin: 0 auto !important;
+    }
+
+    /* Adjust the text spacing for phone screens */
+    .ui-header-specs {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Collapse the 4-box stats grid into a single vertical list on mobile */
+    .ui-header-stats-grid {
+        grid-template-columns: 1fr !important; /* Changes from 2x2 grid to 1 column list */
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .ui-stat-node {
+        text-align: center !important;
+    }
+}
