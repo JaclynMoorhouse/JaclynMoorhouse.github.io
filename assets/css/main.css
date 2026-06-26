@@ -3961,30 +3961,61 @@ section.featured::after, section#projects::after {
     opacity: 0.8;
     margin-top: 0.1em !important;
 }
+/* ==========================================================================
+   THE ULTIMATE STRUCTURAL GRID FIX - OVERRIDES FLEX-WRAP FORCING
+   ========================================================================== */
 
-/* --- HEADER MOBILE BREAKPASS --- */
-@media screen and (max-width: 980px) {
-    .ui-header-flex {
-        flex-direction: column-reverse !important; /* Moves avatar smoothly above text on mobile layout screens */
-        gap: 2.5em !important;
-        text-align: center !important;
+/* 1. Only apply to desktop viewports (above tablet size) */
+@media screen and (min-width: 769px) {
+    
+    /* Force the main portfolio/feature containers to use rigid 50/50 columns */
+    .features .row, 
+    #main .row, 
+    #portfolio .row,
+    .project-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Two precise equal-width columns */
+        gap: 3rem !important; /* Clean breathing room between items */
+        width: 100% !important;
     }
-    .ui-header-specs, .ui-header-avatar-zone {
-        flex: 0 0 100% !important;
+
+    /* Prevent the template's internal column styles from breaking the grid alignment */
+    .features .row > *, 
+    #main .row > *, 
+    #portfolio .row > *,
+    .features article,
+    .grid-item {
+        width: 100% !important;
         max-width: 100% !important;
-    }
-    .ui-header-stats-grid {
-        grid-template-columns: 1fr !important; /* Stacks data fields cleanly on smaller portrait windows */
-    }
-    .ui-stat-node {
-        border-left: none !important;
-        border-top: 4px solid var(--brand-purple) !important;
-        border-radius: 0 0 8px 8px;
+        flex: none !important; /* Disables the flex wrap behavior completely */
+        padding: 0 !important;
+        margin: 0 !important;
     }
 }
-/* --- COMPACT SYSTEM NAV LINK --- */
-.button.cv-link-btn {
-    margin-top: 1.5em !important;
-    width: 240px !important;
-    max-width: 100% !important;
+
+/* 2. Pure Mobile/Tablet Stack (Safe collapsing under 768px) */
+@media screen and (max-width: 768px) {
+    .features .row, 
+    #main .row, 
+    #portfolio .row,
+    .project-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2.5rem !important;
+    }
+
+    .features article, 
+    .grid-item,
+    #main section,
+    #portfolio section {
+        width: 100% !important;
+        border-bottom: 2px dashed rgba(98, 54, 151, 0.15) !important;
+        padding-bottom: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .features article:last-child {
+        border-bottom: none !important;
+        margin-bottom: 0 !important;
+    }
 }
